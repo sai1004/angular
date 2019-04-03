@@ -108,24 +108,19 @@ console.log(includesTwo)
 
 //===========================================================================
 
-const person = [
-
-  {
+const person = {
     
-    "firstName":"jake",
-    "lastName":"fransis",
-    "mobile":"+1669854655",
-    "email":"jake@gmail.com",
-    "fullName": function() {
-          return this.firstName + " " + this.lastName
+    firstName:"jake",
+    lastName:"fransis",
+    mobile:"+1669854655",
+    email:"jake@gmail.com",
+    fullName: function() {
+          return "this person fullname is " + this.firstName + " " + this.lastName
       }
   
   }
-  
-  
-]
 
-document.write(person.fullName)
+document.write(person.fullName())
 
 
 
