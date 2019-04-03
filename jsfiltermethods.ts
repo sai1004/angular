@@ -105,3 +105,27 @@ const items = [1,2,3,4,5,6]
 const includesTwo = items.includes(7)
 
 console.log(includesTwo)
+
+//===========================================================================
+
+const person = [
+
+  {
+    
+    "firstName":"jake",
+    "lastName":"fransis",
+    "mobile":"+1669854655",
+    "email":"jake@gmail.com",
+    "fullName": function() {
+          return this.firstName + " " + this.lastName
+      }
+  
+  }
+  
+  
+]
+
+document.write(person.fullName)
+
+
+
