@@ -1,0 +1,28 @@
+
+
+
+
+<input (keydown.enter)="...">
+<input (keydown.a)="...">
+<input (keydown.esc)="...">
+<input (keydown.shift.esc)="...">
+<input (keydown.control)="...">
+<input (keydown.alt)="...">
+<input (keydown.meta)="...">
+<input (keydown.9)="...">
+<input (keydown.tab)="...">
+<input (keydown.backspace)="...">
+<input (keydown.arrowup)="...">
+<input (keydown.shift.arrowdown)="...">
+<input (keydown.shift.control.z)="...">
+<input (keydown.f4)="...">
+
+
+<input (keydown)="onKeydown($event)">
+
+
+onKeydown(event) {
+  if (event.key === "Enter") {
+    console.log(event);
+  }
+}
