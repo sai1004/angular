@@ -8,3 +8,14 @@ export class HighlightDirective {
        renderer.setElementStyle(el.nativeElement,'backgroundColor', 'yellow');
     }
 }
+
+// Example
+
+// @Component({
+//   selector: 'app-dom-events',
+//   templateUrl:`
+ 
+//    <h1 appHighlight>  property Binding </h1>
+  
+//   `
+// })
