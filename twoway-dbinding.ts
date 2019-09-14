@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl:`
  
    <h1> Two way Binding </h1>
-  <input [(ngModel)]='searchBox'> <!----- Bannana in a Box ------ >
+  <input [(ngModel)]='searchBox' name='searchBox'> <!----- Bannana in a Box ------ >
   
   <p> need to import FormsModule in NgModule 
     import { FormsModule } from '@angular/forms';
