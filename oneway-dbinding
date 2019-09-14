@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
   src is the property and imgurl is the class property in the ts file
   </p>
    <h1> property Binding </h1>
-  <img [src]='bookimgurl' > 
+  <img [src]='bookimgurl' [style.width.px]='imgWidth'> 
   `
 })
 export class OnewayDbinding implements OnInit {
@@ -21,6 +21,7 @@ export class OnewayDbinding implements OnInit {
 
  //property bining 
   bookimgurl: string = '../app/assetss/img.png'; 
+  imgWidth = 100px;
   constructor() { }
 
   ngOnInit() {
