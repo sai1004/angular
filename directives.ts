@@ -17,7 +17,7 @@ import { Component, OnInit } from '@angular/core';
   
   <li> Attribute <li>
 
-  <p highlight>  in-line attribute </p>
+  <p highlight>  in-line attribute </p>   // reffer highlight.directive.ts 
   
   </ul>
   
