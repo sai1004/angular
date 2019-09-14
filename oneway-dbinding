@@ -4,13 +4,23 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-dom-events',
   templateUrl:`
   <h1> One Way Data Binding </h1>
-<h4> {{pageTitle}} </h4>
+  <h4> {{pageTitle}} </h4>
+  
+  <h3> what is property Binding? </h3>
+  <p> there are properties within the tags for "<img [src]='imgurl"
+  src is the property and imgurl is the class property in the ts file
+  </p>
+   <h1> property Binding </h1>
+  <img [src]='bookimgurl' > 
   `
 })
 export class OnewayDbinding implements OnInit {
-
+// one-way-binding 
   pageTitle: string = 'Dev Book Store'; 
  
+
+ //property bining 
+  bookimgurl: string = '../app/assetss/img.png'; 
   constructor() { }
 
   ngOnInit() {
