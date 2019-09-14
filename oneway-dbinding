@@ -1,0 +1,19 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-dom-events',
+  templateUrl:`
+  <h1> One Way Data Binding </h1>
+<h4> {{pageTitle}} </h4>
+  `
+})
+export class OnewayDbinding implements OnInit {
+
+  pageTitle: string = 'Dev Book Store'; 
+ 
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
