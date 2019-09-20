@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from "@angular/core";
   
   <section class="container">
   <div *ngFor="let book of books">
-  <app-book-child [book]='book' > </app-book-child>
+  <app-book-child [book]='book' > </app-book-child> //sending input value to the child component by property name and value
   </div>
   </section>
 
