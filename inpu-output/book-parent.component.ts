@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from "@angular/core";
   
   <section class="container">
   <div *ngFor="let book of books">
-  <app-book-child [book]='book' > </app-book-child> //sending input value to the child component by property name and value
+  <app-book-child [book]='book' (notifyParent)="getNotification($event)"> </app-book-child> //sending input value to the child component by property name and value
   </div>
   </section>
 
@@ -26,4 +26,10 @@ export class BookParentComponent implements OnInit {
   }
 
   ngOnInit() {}
+  
+  
+    getNotification(evt) {
+    // Do something with the notification (evt) sent by the child!
+    console.log('Notification Recived As User Clicked Btn ')
+    }
 }
