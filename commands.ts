@@ -10,7 +10,7 @@ https://malcoded.com/posts/angular-file-upload-component-with-express/
 https://malcoded.com/posts/angular-file-explorer-component/
 https://codinglatte.com/posts/angular/attaching-authorization-token-angular-6/
 https://auth0.com/blog/ngrx-authentication-tutorial/
-
+https://angular.io/start
 
 
 
