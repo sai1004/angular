@@ -14,3 +14,6 @@
 <h4> stackblitz </h4>
 
 https://stackblitz.com/edit/angular-u7sveh?file=src%2Fapp%2Fapp.component.html
+
+
+https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/#Unrelated-Components-Sharing-Data-with-a-Service
