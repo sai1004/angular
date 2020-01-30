@@ -2,3 +2,6 @@ https://www.sitepoint.com/angular-forms/
 
 
 https://angular.io/guide/dynamic-form
+
+
+https://malcoded.com/posts/angular-fundamentals-reactive-forms/
