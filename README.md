@@ -16,6 +16,12 @@ https://jasonwatmore.com/post/2019/06/10/angular-8-user-registration-and-login-e
 
 https://jasonwatmore.com/post/2018/11/16/angular-7-jwt-authentication-example-tutorial
 
+https://alligator.io/angular/socket-io/
+
+https://alligator.io/angular/template-driven-forms/
+
+https://alligator.io/angular/custom-validation/
+
 <h4> stackblitz </h4>
 
 https://stackblitz.com/edit/angular-u7sveh?file=src%2Fapp%2Fapp.component.html
