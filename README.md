@@ -22,6 +22,8 @@ https://alligator.io/angular/template-driven-forms/
 
 https://alligator.io/angular/custom-validation/
 
+https://alligator.io/angular/deploying-angular-app-to-firebase/
+
 <h4> stackblitz </h4>
 
 https://stackblitz.com/edit/angular-u7sveh?file=src%2Fapp%2Fapp.component.html
