@@ -1,0 +1,1 @@
+We are writing this file synchronously using node jsThis data will be appended at the end of the content.txt file.This data will be appended at the end of the content.txt file.
