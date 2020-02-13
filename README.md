@@ -1,5 +1,36 @@
 # angular
 
+angular cli 
+
+
+npm i @angular/cli
+
+npm i @angular/cli@latest
+
+npm i @angular/cli@8.0.0
+
+npm install --save @angular/material @angular/cdk @angular/animations
+
+npm install @angular/flex-layout --save
+
+
+
+ng add @angular/material
+
+ng g @angular/material:materialNav --name=main-nav
+
+
+
+
+ng g @angular/material:material-table --name=main-table
+
+
+ng g @angular/material:material-dashboard --name=main-dash
+
+
+
+
+
 <h2> Angular Data Flow </h2>
 
 <ol>
