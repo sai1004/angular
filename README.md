@@ -61,4 +61,6 @@ https://www.freecodecamp.org/news/everything-you-need-to-know-about-ng-template-
 
 https://www.sitepoint.com/simple-javascript-quiz/
 
+https://www.freecodecamp.org/news/best-angular-tutorial-angularjs/
+
 https://www.djamware.com/post/5d4628d5721e1ce9d7dc95b0/angular-8-tutorial-facebook-login
