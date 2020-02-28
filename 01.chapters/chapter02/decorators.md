@@ -21,11 +21,10 @@
 
 /* ''''''''''''''''''''' @ViewChildren '''''''''''''''''''' */
 
-/*
+ 
 Returns the specified elements or directives from the view DOM as QueryList
 
-*/
-
+ 
       @Component({
         selector: 'alert',
         template: `
@@ -92,9 +91,9 @@ Like ViewChildren but returns only the first element or the directive matching t
 
 /*  '''''''''''''''''''''' @ContentChildren ''''''''''''''''''''''''' */
 
-/*
+ 
 Returns the specified elements or directives from the content DOM as QueryList
-*/
+ 
 
       @Component({
         selector: 'tab',
@@ -135,9 +134,8 @@ Returns the specified elements or directives from the content DOM as QueryList
 
 /*  ''''''''''''''''''''''@ContentChild ''''''''''''''''''''''''' */
 
-/*
 Like ContentChildren but returns only the first element or the directive matching the selector from the content DOM
-*/
+
       @Component({
         selector: 'tabs',
         template: `
@@ -164,8 +162,8 @@ Like ContentChildren but returns only the first element or the directive matchin
 
 
 /*  ''''''''''''''''''''''@HostBinding ''''''''''''''''''''''''' */
-
-// Declares a host property binding
+ 
+ Declares a host property binding
 
 
       @Directive({
@@ -194,11 +192,10 @@ Like ContentChildren but returns only the first element or the directive matchin
 
 /*  '''''''''''''''''''''' @HostListener ''''''''''''''''''''''''' */
 
-
-/*
+ 
 Declares a host listener. Angular will invoke the decorated method when the host element emits the specified event
 
-*/
+ 
       @Directive({
         selector: '[count]'
       })
@@ -232,46 +229,46 @@ Declares a host listener. Angular will invoke the decorated method when the host
 The @Self decorator tells DI to look for a dependency only from itself, so it will not walk up the tree
 */
 
-class Dependency {}
+            class Dependency {}
 
-class ChildDependency {
- constructor() {
-   console.log("ChildDependency");
- }
-}
+            class ChildDependency {
+             constructor() {
+               console.log("ChildDependency");
+             }
+            }
 
-class ParentDependency {
- constructor() {
-   console.log("ParentDependency");
- }
-}
+            class ParentDependency {
+             constructor() {
+               console.log("ParentDependency");
+             }
+            }
 
-@Component({
-  selector: 'cmp',
-  template: `
-    cmp
-  `,
-  providers: [{ provide: Dependency, useClass: ChildDependency }]
-})
-export class DIComponent {
-  constructor(@Self() public dependency: Dependency) {}
-}
+            @Component({
+              selector: 'cmp',
+              template: `
+                cmp
+              `,
+              providers: [{ provide: Dependency, useClass: ChildDependency }]
+            })
+            export class DIComponent {
+              constructor(@Self() public dependency: Dependency) {}
+            }
 
-@Component({
-  selector: 'my-app',
-  template: `
-    <cmp></cmp>
-  `,
-})
-export class App {}
+            @Component({
+              selector: 'my-app',
+              template: `
+                <cmp></cmp>
+              `,
+            })
+            export class App {}
 
-@NgModule({
-  imports: [ BrowserModule ],
-  declarations: [ App,  DIComponent],
-  providers: [{ provide: Dependency, useClass: ParentDependency }],
-  bootstrap: [ App ]
-})
-export class AppModule {}
+            @NgModule({
+              imports: [ BrowserModule ],
+              declarations: [ App,  DIComponent],
+              providers: [{ provide: Dependency, useClass: ParentDependency }],
+              bootstrap: [ App ]
+            })
+            export class AppModule {}
 
 
 /*  ''''''''''''''''''''''@SkipSelf''''''''''''''''''''''''' */
@@ -280,46 +277,46 @@ export class AppModule {}
 The @SkipSelf decorator tells DI to look for a dependency in the whole tree starting from the parent injector
 */
 
-class Dependency {}
+      class Dependency {}
 
-class ChildDependency {
- constructor() {
-   console.log("ChildDependency");
- }
-}
+      class ChildDependency {
+       constructor() {
+         console.log("ChildDependency");
+       }
+      }
 
-class ParentDependency {
- constructor() {
-   console.log("ParentDependency");
- }
-}
+      class ParentDependency {
+       constructor() {
+         console.log("ParentDependency");
+       }
+      }
 
-@Component({
-  selector: 'cmp',
-  template: `
-    cmp
-  `,
-  providers: [{ provide: Dependency, useClass: ChildDependency }]
-})
-export class DIComponent {
-  constructor(@SkipSelf() public dependency: Dependency) {}
-}
+      @Component({
+        selector: 'cmp',
+        template: `
+          cmp
+        `,
+        providers: [{ provide: Dependency, useClass: ChildDependency }]
+      })
+      export class DIComponent {
+        constructor(@SkipSelf() public dependency: Dependency) {}
+      }
 
-@Component({
-  selector: 'my-app',
-  template: `
-    <cmp></cmp>
-  `,
-})
-export class App {}
+      @Component({
+        selector: 'my-app',
+        template: `
+          <cmp></cmp>
+        `,
+      })
+      export class App {}
 
-@NgModule({
-  imports: [ BrowserModule ],
-  declarations: [ App,  DIComponent],
-  providers: [{ provide: Dependency, useClass: ParentDependency }],
-  bootstrap: [ App ]
-})
-export class AppModule {}
+      @NgModule({
+        imports: [ BrowserModule ],
+        declarations: [ App,  DIComponent],
+        providers: [{ provide: Dependency, useClass: ParentDependency }],
+        bootstrap: [ App ]
+      })
+      export class AppModule {}
 
 
 /*  ''''''''''''''''''''' @Host ''''''''''''''''''''''''' */
@@ -328,30 +325,30 @@ export class AppModule {}
 The @Host decorator tells DI to look for a dependency in any injector until it reaches the host
 */
 
-@Component({
-  selector: 'cmp',
-  template: `
-    cmp
-  `,
-})
-export class DIComponent {}
+            @Component({
+              selector: 'cmp',
+              template: `
+                cmp
+              `,
+            })
+            export class DIComponent {}
 
-@Directive({
-  selector: "[host-di]"
-})
-export class HostDI {
- constructor(@Host() cmp: DIComponent) {
-   console.log(cmp);
- }
-}
+            @Directive({
+              selector: "[host-di]"
+            })
+            export class HostDI {
+             constructor(@Host() cmp: DIComponent) {
+               console.log(cmp);
+             }
+            }
 
-@Component({
-  selector: 'my-app',
-  template: `
-    <cmp host-di></cmp>
-  `,
-})
-export class App {}
+            @Component({
+              selector: 'my-app',
+              template: `
+                <cmp host-di></cmp>
+              `,
+            })
+            export class App {}
 
 /*  '''''''''''''''''''''' @Optional ''''''''''''''''''''''''' */
 
@@ -360,17 +357,17 @@ A parameter metadata that marks a dependency as optional. The injector provides 
 */
 
 
-class OptionalDependency {}
+            class OptionalDependency {}
 
-@Component({
-  selector: 'cmp',
-  template: `
-    cmp
-  `,
-})
-export class DIComponent {
-  constructor(@Optional() public dependency: OptionalDependency) {}
-}
+            @Component({
+              selector: 'cmp',
+              template: `
+                cmp
+              `,
+            })
+            export class DIComponent {
+              constructor(@Optional() public dependency: OptionalDependency) {}
+            }
 
 
 /*  ''''''''''''''''''''''@Inject — ''''''''''''''''''''''''' */
@@ -378,26 +375,26 @@ export class DIComponent {
 // A parameter decorator that specifies a dependency
 
 
-@Component({
-  selector: 'cmp',
-  template: `
-    cmp
-  `
-})
-export class DIComponent {
-  constructor(@Inject(Dependency) public dependency) {}
-}
+            @Component({
+              selector: 'cmp',
+              template: `
+                cmp
+              `
+            })
+            export class DIComponent {
+              constructor(@Inject(Dependency) public dependency) {}
+            }
 
 
 /*  '''''''''''''''''''''' @Injectable — ''''''''''''''''''''''''' */
 
 // Let’s Angular know that a class can be used with the DI
 
-@Injectable()
-export class WidgetService {
-  constructor(
-    public authService: AuthService) { }
-}
+            @Injectable()
+            export class WidgetService {
+              constructor(
+                public authService: AuthService) { }
+            }
 
 /*  https://netbasal.com/exploring-the-various-decorators-in-angular-b208875b207c */
 
