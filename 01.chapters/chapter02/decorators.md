@@ -1,22 +1,22 @@
 // @Attribute —
 
 
-@Directive({
-  selector: '[test]'
-})
-export class TestDirective {
-  constructor(@Attribute('type') type ) {
-    console.log(type); // text
-  }
-}
-  
-@Component({
-  selector: 'my-app',
-  template: `
-    <input type="text" test>
-  `,
-})
-export class App {}
+      @Directive({
+        selector: '[test]'
+      })
+      export class TestDirective {
+        constructor(@Attribute('type') type ) {
+          console.log(type); // text
+        }
+      }
+
+      @Component({
+        selector: 'my-app',
+        template: `
+          <input type="text" test>
+        `,
+      })
+      export class App {}
 
 
 /* ''''''''''''''''''''' @ViewChildren '''''''''''''''''''' */
@@ -26,31 +26,31 @@ Returns the specified elements or directives from the view DOM as QueryList
 
 */
 
-@Component({
-  selector: 'alert',
-  template: `
-    {{type}}
-  `,
-})
-export class AlertComponent {
-  @Input() type: string = "success";
-}
+      @Component({
+        selector: 'alert',
+        template: `
+          {{type}}
+        `,
+      })
+      export class AlertComponent {
+        @Input() type: string = "success";
+      }
 
-@Component({
-  selector: 'my-app',
-  template: `
-    <alert></alert>
-    <alert type="danger"></alert>
-    <alert type="info"></alert>
-  `,
-})
-export class App {
-  @ViewChildren(AlertComponent) alerts: QueryList<AlertComponent>
-  
-  ngAfterViewInit() {
-    this.alerts.forEach(alertInstance => console.log(alertInstance));
-  }
-}
+      @Component({
+        selector: 'my-app',
+        template: `
+          <alert></alert>
+          <alert type="danger"></alert>
+          <alert type="info"></alert>
+        `,
+      })
+      export class App {
+        @ViewChildren(AlertComponent) alerts: QueryList<AlertComponent>
+
+        ngAfterViewInit() {
+          this.alerts.forEach(alertInstance => console.log(alertInstance));
+        }
+      }
 
 
 
@@ -60,34 +60,34 @@ export class App {
 Like ViewChildren but returns only the first element or the directive matching the selector from the view DOM
 */
 
-@Component({
-  selector: 'alert',
-  template: `
-    {{type}}
-  `,
-})
-export class AlertComponent {
-  @Input() type: string = "success";
-}
+      @Component({
+        selector: 'alert',
+        template: `
+          {{type}}
+        `,
+      })
+      export class AlertComponent {
+        @Input() type: string = "success";
+      }
 
-@Component({
-  selector: 'my-app',
-  template: `
-    <alert></alert>
-    <div #divElement>Tada!</div>
-  `,
-})
-export class App {
-  // This will return the native element
-  @ViewChild("divElement") div: any;
-  // This will return the component instance
-  @ViewChild(AlertComponent) alert: AlertComponent;
-  
-  ngAfterViewInit() {
-    console.log(this.div);
-    console.log(this.alert);
-  }
-}
+      @Component({
+        selector: 'my-app',
+        template: `
+          <alert></alert>
+          <div #divElement>Tada!</div>
+        `,
+      })
+      export class App {
+        // This will return the native element
+        @ViewChild("divElement") div: any;
+        // This will return the component instance
+        @ViewChild(AlertComponent) alert: AlertComponent;
+
+        ngAfterViewInit() {
+          console.log(this.div);
+          console.log(this.alert);
+        }
+      }
 
 
 /*  '''''''''''''''''''''' @ContentChildren ''''''''''''''''''''''''' */
@@ -96,40 +96,40 @@ export class App {
 Returns the specified elements or directives from the content DOM as QueryList
 */
 
-@Component({
-  selector: 'tab',
-  template: `
-    <p>{{title}}</p>
-  `,
-})
-export class TabComponent {
-  @Input() title;
-}
+      @Component({
+        selector: 'tab',
+        template: `
+          <p>{{title}}</p>
+        `,
+      })
+      export class TabComponent {
+        @Input() title;
+      }
 
-@Component({
-  selector: 'tabs',
-  template: `
-    <ng-content></ng-content>
-  `,
-})
-export class TabsComponent {
- @ContentChildren(TabComponent) tabs: QueryList<TabComponent>
- 
- ngAfterContentInit() {
-   this.tabs.forEach(tabInstance => console.log(tabInstance))
- }
-}
+      @Component({
+        selector: 'tabs',
+        template: `
+          <ng-content></ng-content>
+        `,
+      })
+      export class TabsComponent {
+       @ContentChildren(TabComponent) tabs: QueryList<TabComponent>
 
-@Component({
-  selector: 'my-app',
-  template: `
-    <tabs>
-     <tab title="One"></tab>
-     <tab title="Two"></tab>
-    </tabs>
-  `,
-})
-export class App {}
+       ngAfterContentInit() {
+         this.tabs.forEach(tabInstance => console.log(tabInstance))
+       }
+      }
+
+      @Component({
+        selector: 'my-app',
+        template: `
+          <tabs>
+           <tab title="One"></tab>
+           <tab title="Two"></tab>
+          </tabs>
+        `,
+      })
+      export class App {}
 
 
 
@@ -138,29 +138,29 @@ export class App {}
 /*
 Like ContentChildren but returns only the first element or the directive matching the selector from the content DOM
 */
-@Component({
-  selector: 'tabs',
-  template: `
-    <ng-content></ng-content>
-  `,
-})
-export class TabsComponent {
- @ContentChild("divElement") div: any;
- 
- ngAfterContentInit() {
-   console.log(this.div);
- }
-}
+      @Component({
+        selector: 'tabs',
+        template: `
+          <ng-content></ng-content>
+        `,
+      })
+      export class TabsComponent {
+       @ContentChild("divElement") div: any;
 
-@Component({
-  selector: 'my-app',
-  template: `
-    <tabs>
-     <div #divElement>Tada!</div>
-    </tabs>
-  `,
-})
-export class App {}
+       ngAfterContentInit() {
+         console.log(this.div);
+       }
+      }
+
+      @Component({
+        selector: 'my-app',
+        template: `
+          <tabs>
+           <div #divElement>Tada!</div>
+          </tabs>
+        `,
+      })
+      export class App {}
 
 
 /*  ''''''''''''''''''''''@HostBinding ''''''''''''''''''''''''' */
@@ -168,28 +168,28 @@ export class App {}
 // Declares a host property binding
 
 
-@Directive({
-  selector: '[host-binding]'
-})
-export class HostBindingDirective {
-  @HostBinding("class.tooltip") tooltip = true;
-  
-  @HostBinding("class.tooltip") 
-  get tooltipAsGetter() {
-    // your logic
-    return true;
-  };
-   
-  @HostBinding() type = "text";
-}
+      @Directive({
+        selector: '[host-binding]'
+      })
+      export class HostBindingDirective {
+        @HostBinding("class.tooltip") tooltip = true;
 
-@Component({
-  selector: 'my-app',
-  template: `
-    <input type="text" host-binding> // this will add the "tooltip" class to the host
-  `,
-})
-export class App {}
+        @HostBinding("class.tooltip") 
+        get tooltipAsGetter() {
+          // your logic
+          return true;
+        };
+
+        @HostBinding() type = "text";
+      }
+
+      @Component({
+        selector: 'my-app',
+        template: `
+          <input type="text" host-binding> // this will add the "tooltip" class to the host
+        `,
+      })
+      export class App {}
 
 
 /*  '''''''''''''''''''''' @HostListener ''''''''''''''''''''''''' */
@@ -199,30 +199,30 @@ export class App {}
 Declares a host listener. Angular will invoke the decorated method when the host element emits the specified event
 
 */
-@Directive({
-  selector: '[count]'
-})
-export class HostListenerDirective {
-  numClicks = 0;
-  numClicksWindow = 0;
-  @HostListener("click", ["$event"])
-  onClick(event) {
-    console.log(this.numClicks++);
-  }
-  
-  @HostListener("window:click", ["$event"])
-  onClick(event) {
-    console.log("Num clicks on the window:", this.numClicksWindow++);
-  }
-}
+      @Directive({
+        selector: '[count]'
+      })
+      export class HostListenerDirective {
+        numClicks = 0;
+        numClicksWindow = 0;
+        @HostListener("click", ["$event"])
+        onClick(event) {
+          console.log(this.numClicks++);
+        }
 
-@Component({
-  selector: 'my-app',
-  template: `
-    <input type="button" count value="+">
-  `,
-})
-export class App {}
+        @HostListener("window:click", ["$event"])
+        onClick(event) {
+          console.log("Num clicks on the window:", this.numClicksWindow++);
+        }
+      }
+
+      @Component({
+        selector: 'my-app',
+        template: `
+          <input type="button" count value="+">
+        `,
+      })
+      export class App {}
 
 
 
