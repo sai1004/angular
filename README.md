@@ -36,6 +36,8 @@
 <li> interceptor.ts </li> <!----acts has a gate------->
 </ol>
 
+https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
+
 https://github.com/cosmicjs/angular-auth
 
 https://jasonwatmore.com/post/2019/06/10/angular-8-user-registration-and-login-example-tutorial
