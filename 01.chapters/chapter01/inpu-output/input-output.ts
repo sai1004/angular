@@ -30,7 +30,7 @@ email: string = "sam@example.com"
 
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-import { Component , Input } from "@angular/core";
+import { Component , Input, Output } from "@angular/core";
 
 @Component({
   selector: "app-child",
