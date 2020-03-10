@@ -4,12 +4,16 @@ import { Component  } from "@angular/core";
   selector: "app-root",
   templateUrl:  `
   
-  <app-child [parnetProp]="name" [email]="email" (notify)=getNotification($event) (message)="getMsg=$event" ></app-child>
+          <app-child 
+                [parnetProp]="name" 
+                [email]="email"
+                (notify)=getNotification($event)
+                (message)="getMsg=$event" >
+           </app-child>
   
       <p> {{ getMsg }} </p>
 
   `
- 
 })
 
 export class AppComponent  { // parentComponent
@@ -32,13 +36,12 @@ import { Component , Input } from "@angular/core";
   selector: "app-child",
   templateUrl:  `
   
-  <h1> hello {{name}}  </h1>
-  <p> {{email}} </p>
+        <h1> hello {{name}}  </h1>
+        <p> {{email}} </p>
 
-<button (click)="onSubmit()"> submit </button>  
+        <button (click)="onSubmit()"> submit </button>  
 
 `
- 
 })
 export class childComponent  {
 
@@ -51,13 +54,9 @@ email:string;
   
 @Output() message = new EventEmitter();
   
-  
   onSubmit($event){
-    
     this.notify.emit($event)
     this.message.emit("I was clicked in child component")
   }
-
-  
 
 }
