@@ -4,6 +4,9 @@ import { Component  } from "@angular/core";
   selector: "app-root",
   templateUrl:  `
   
+    <h1> Builtin Pipes:</h1>
+
+
    <h4> {{ name | uppercase }} </h4>
    
    <h4> {{ name | lowercase }}  </h4>
